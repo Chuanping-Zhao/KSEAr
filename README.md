@@ -22,9 +22,10 @@ KSEAr is designed to perform Kinase-Substrate Enrichment Analysis (KSEA) in a mo
 KSEAr is designed to perform Kinase-Substrate Enrichment Analysis (KSEA) in a more programmatically accessible manner, making it easier to integrate KSEA into larger bioinformatics workflows and to perform the analysis on a larger scale.
 
 # How to Install
-
+```R
+install.packages("remotes")
 remotes::install_github("Chuanping-Zhao/KSEAr")
-
+```
 # use
 ```R
 rm(list = ls())
