@@ -23,6 +23,7 @@ KSEAr is designed to perform Kinase-Substrate Enrichment Analysis (KSEA) in a mo
 
 # How to Install
 ```R
+install.packages("ggplot2")# ggplot2 v3.5.0
 install.packages("remotes")
 remotes::install_github("Chuanping-Zhao/KSEAr")
 ```
