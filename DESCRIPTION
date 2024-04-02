@@ -1,0 +1,29 @@
+Package: KSEAr
+Title: Kinase Substrate Enrichment Analysis for Proteomics Data
+Version: 0.0.0.9000
+Authors@R: 
+    person("Chuanping", "Zhao", email = "1079957338@qq.com", role = c("aut", "cre"))
+Description: This package provides tools for performing Kinase Substrate Enrichment Analysis (KSEA) in proteomics data, 
+    based on methodologies from the KSEA App (Version: 1.0, February 2017). KSEA is a computational method 
+    designed to assess kinase activity from phosphoproteomics data, allowing comparison of kinase activities 
+    between different conditions, such as control and drug-treated groups. The package integrates quantitative 
+    phosphoproteomics data with kinase-substrate relationships to identify kinases that are significantly 
+    activated or inhibited, applies statistical tests for enrichment analysis, and offers visualization tools 
+    for the results. This tool facilitates the understanding of key regulatory mechanisms in cellular signaling 
+    pathways and the functional impact of treatments or genetic alterations. The source code is inspired by and 
+    adapted from the KSEA App, which can be accessed at https://casecpb.shinyapps.io/ksea/.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: 
+    R (>= 4.3.0)
+Imports:
+    dplyr (>= 1.1.4),
+    ggplot2 (>= 3.5.0),
+    readr (>= 2.1.4),
+    stringr (>= 1.5.1),
+    tibble (>= 3.2.1),
+    tidyr (>= 1.3.1),
+    magrittr
+LazyData: true
