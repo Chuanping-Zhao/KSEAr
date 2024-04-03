@@ -17,10 +17,6 @@ The source code and example data in KSEAr have been adapted from the KSEA Shiny 
 
 KSEAr is designed to perform Kinase-Substrate Enrichment Analysis (KSEA) in a more programmatically accessible manner, making it easier to integrate KSEA into larger bioinformatics workflows and to perform the analysis on a larger scale.
 
-# Purpose
-
-KSEAr is designed to perform Kinase-Substrate Enrichment Analysis (KSEA) in a more programmatically accessible manner, making it easier to integrate KSEA into larger bioinformatics workflows and to perform the analysis on a larger scale.
-
 # How to Install
 ```R
 install.packages("ggplot2")# ggplot2 v3.5.0
@@ -36,6 +32,16 @@ library(KSEAr)
 #loading data
 files_input <- fs::dir_ls("inputfile",recurse = TRUE,glob = "*.csv")
 input <-  map_dfr(files_input,read_csv)
+head(input,3)
+```
+# A tibble: 3 × 6
+  Protein Gene  Peptide           Residue.Both     p    FC
+  <chr>   <chr> <chr>             <chr>        <dbl> <dbl>
+1 Q15019  SEPT2 IYHLPDAESDEDEDFK  S218         0.324 1.06 
+2 Q9UHD8  SEPT9 RSFEVEEVETPNSTPPR S30          0.258 1.43 
+3 Q9UHD8  SEPT9 SFEVEEVETPNSTPPRR T42;S30      0.297 0.630
+
+```R
 result <- KSEA(input_data = input,#a dataframe
                networkin_score_cutoff = 1,# The filter score of networkin datsets(if selected)
                substrate_count_cutoff = 4,# The counts of substrate
@@ -44,6 +50,5 @@ result <- KSEA(input_data = input,#a dataframe
                dataset = "PSP_networkin")#datasets:'PSP_networkin' or 'PSP'
 enrichresults <- result[[1]]#resulst
 enrich_plot <- result[[2]]#plotting
-
 ```
 ![image](https://github.com/Chuanping-Zhao/KSEAr/assets/134377196/2b352f5e-142a-475d-a5d3-c49b6456a6b6)
