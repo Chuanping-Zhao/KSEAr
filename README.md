@@ -34,12 +34,15 @@ files_input <- fs::dir_ls("inputfile",recurse = TRUE,glob = "*.csv")
 input <-  map_dfr(files_input,read_csv)
 head(input,3)
 ```
-# A tibble: 3 × 6
+
+```
+#A tibble: 3 × 6
   Protein Gene  Peptide           Residue.Both     p    FC
   <chr>   <chr> <chr>             <chr>        <dbl> <dbl>
 1 Q15019  SEPT2 IYHLPDAESDEDEDFK  S218         0.324 1.06 
 2 Q9UHD8  SEPT9 RSFEVEEVETPNSTPPR S30          0.258 1.43 
 3 Q9UHD8  SEPT9 SFEVEEVETPNSTPPRR T42;S30      0.297 0.630
+```
 
 ```R
 result <- KSEA(input_data = input,#a dataframe
